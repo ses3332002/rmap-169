@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import { Button, ConfigProvider, Col, Row } from 'antd'
-// import { Provider } from 'mobx-react'
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher'
 import { useTranslation } from 'react-i18next'
-
+// import { Provider } from 'mobx-react'
 // import store from 'stores'
 
 function App(): JSX.Element {
   const { t, i18n } = useTranslation()
-  type Direction = 'rtl' | 'ltr'
 
-  let direction: Direction = i18n.dir()
+  let direction = i18n.dir()
 
   const themes = {
     light: `${process.env.PUBLIC_URL}/styles/antd.min.css`,
@@ -50,7 +48,7 @@ function App(): JSX.Element {
       <ConfigProvider direction={direction}>
         <Row>
           <Col span={24}>
-            <Button> {t('buttonText')}</Button>
+            <Button>{t('buttonText')}</Button>
             {t('welcome')}
             <Button>Hello onсe more</Button>
           </Col>
