@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import App from './containers/App'
 
 import 'normalize.css'
-import 'antd/dist/antd.css'
+// import 'antd/dist/antd.dark.css'
+// import 'antd/dist/antd.css'
+
 import 'sources/styles/styles.scss'
 
 ReactDOM.render(<App />, document.getElementById('root'))

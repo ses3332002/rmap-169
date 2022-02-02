@@ -1,4 +1,6 @@
 @import './variables';
+// @import '~antd/dist/antd.compact.css';
+// @import '~antd/dist/antd.dark.css';
 
 html,
 body,
@@ -8,11 +10,11 @@ body,
 }
 
 body {
-  background-color: green;
+  // background-color: green;
   // @media (prefers-color-scheme: light) {
   // }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: black;
-  }
+  //   @media (prefers-color-scheme: dark) {
+  //     background-color: black;
+  //   }
 }
