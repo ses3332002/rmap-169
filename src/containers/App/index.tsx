@@ -1,42 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, ConfigProvider, Col, Row } from 'antd'
-import { Provider } from 'mobx-react'
+// import { Provider } from 'mobx-react'
+import { ThemeSwitcherProvider } from 'react-css-theme-switcher'
+import { useTranslation } from 'react-i18next'
 
-import store from 'stores'
+// import store from 'stores'
 
 function App(): JSX.Element {
+  const { t, i18n } = useTranslation()
   type Direction = 'rtl' | 'ltr'
 
-  let direction: Direction = 'rtl'
+  let direction: Direction = i18n.dir()
 
-  function loadLightScheme() {
-    let styles = document.createElement('link')
-    styles.type = 'text/css'
-    styles.rel = 'stylesheet'
-    styles.href = './antd.min.css'
-    document.head.appendChild(styles)
+  const themes = {
+    light: `${process.env.PUBLIC_URL}/styles/antd.min.css`,
+    dark: `${process.env.PUBLIC_URL}/styles/antd.dark.min.css`,
   }
-  function loadDarkScheme() {
-    let styles = document.createElement('link')
-    styles.type = 'text/css'
-    styles.rel = 'stylesheet'
-    styles.href = './antd.dark.min.css'
-    document.head.appendChild(styles)
+
+  const [currentColorScheme, setCurrentColorScheme] = useState('light')
+
+  function getCurrentColorScheme() {
+    if (window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+      } else {
+        return 'light'
+      }
+    }
+    return 'light'
+  }
+
+  function colorSchemeChangeHandler() {
+    setCurrentColorScheme(getCurrentColorScheme())
+  }
+
+  if (window.matchMedia) {
+    let colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    colorSchemeQuery.addEventListener('change', colorSchemeChangeHandler)
   }
 
   return (
     // <Provider {...store}>
-    <>
+    <ThemeSwitcherProvider
+      defaultTheme={currentColorScheme}
+      themeMap={themes}
+      insertionPoint={document.getElementById('inject-styles-here')}
+    >
       Hello
       <ConfigProvider direction={direction}>
         <Row>
           <Col span={24}>
-            <Button onClick={loadLightScheme}>Hello there</Button>
-            <Button onClick={loadDarkScheme}>Hello onсe more</Button>
+            <Button> {t('buttonText')}</Button>
+            {t('welcome')}
+            <Button>Hello onсe more</Button>
           </Col>
         </Row>
       </ConfigProvider>
-    </>
+    </ThemeSwitcherProvider>
     // </Provider>
   )
 }
