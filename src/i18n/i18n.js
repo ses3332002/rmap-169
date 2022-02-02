@@ -13,15 +13,42 @@ const resources = {
   },
 }
 
+const options = {
+  order: [
+    'navigator',
+    'querystring',
+    'cookie',
+    'localStorage',
+    'sessionStorage',
+    'htmlTag',
+    'path',
+    'subdomain',
+  ],
+
+  lookupQuerystring: 'lng',
+  lookupCookie: 'i18next',
+  lookupLocalStorage: 'i18nextLng',
+  lookupSessionStorage: 'i18nextLng',
+  lookupFromPathIndex: 0,
+  lookupFromSubdomainIndex: 0,
+  caches: ['localStorage', 'cookie'],
+  excludeCacheFor: ['cimode'],
+  cookieMinutes: 10,
+  cookieDomain: 'myDomain',
+  htmlTag: document.documentElement,
+  cookieOptions: { path: '/', sameSite: 'strict' },
+}
+
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
   .use(LanguageDetector)
   .init({
     resources,
-    fallbackLng: 'en', // default language
-    keySeparator: false, // we do not use keys in form messages.welcome
+    detection: options,
+    fallbackLng: 'en',
+    keySeparator: false,
     interpolation: {
-      escapeValue: false, // react already safes from xss
+      escapeValue: false,
     },
   })
 
