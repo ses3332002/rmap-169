@@ -15,58 +15,67 @@ import styles from './styles.module.scss'
 
 function App(): JSX.Element {
   const { t, i18n } = useTranslation()
-  let antdLocale
-  let antdDirection
+  let antdLocale = enUS
+  let antdDirection: 'ltr' | 'rtl' = 'ltr'
 
-  function setLanguage(resolvedLanguage: string, direction: string) {
-    antdDirection = direction
-    moment.locale(resolvedLanguage)
+  const [locale, setLocale] = useState(getLocale)
+  // const [localeSettings,setLocaleSettings]=useState({})
 
-    switch (resolvedLanguage) {
+  function prepareLocale(locale: string) {
+    moment.locale(locale as string)
+    switch (locale) {
       case languageCodes.enCode:
         antdLocale = enUS
+        antdDirection = 'ltr'
         break
       case languageCodes.heCode:
         antdLocale = heIL
+        antdDirection = 'rtl'
         break
       default:
+        antdDirection = 'ltr'
         antdLocale = enUS
         moment.locale('en')
     }
   }
 
-  setLanguage(i18n.resolvedLanguage, i18n.dir())
+  function getLocale() {
+    if (localStorage.getItem('locale')) {
+      prepareLocale(localStorage.getItem('locale') as string)
+      return localStorage.getItem('locale')
+    } else {
+      prepareLocale(i18n.resolvedLanguage)
+      return i18n.resolvedLanguage
+    }
+  }
 
-  useEffect(() => {
-    console.log("I've started")
-  }, [])
+  function saveLocale(locale: string) {
+    localStorage.setItem('locale', locale)
+  }
 
   const themes = {
     light: `${process.env.PUBLIC_URL}/styles/antd.min.css`,
     dark: `${process.env.PUBLIC_URL}/styles/antd.dark.min.css`,
   }
 
-  const [currentColorScheme, setCurrentColorScheme] = useState('light')
+  const [currentColorScheme, setCurrentColorScheme] = useState(
+    getCurrentColorScheme
+  )
 
   function getCurrentColorScheme() {
-    if (window.matchMedia) {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark'
-      } else {
-        return 'light'
-      }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    } else {
+      return 'light'
     }
-    return 'light'
   }
 
   function colorSchemeChangeHandler() {
     setCurrentColorScheme(getCurrentColorScheme())
   }
 
-  if (window.matchMedia) {
-    let colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    colorSchemeQuery.addEventListener('change', colorSchemeChangeHandler)
-  }
+  let colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  colorSchemeQuery.addEventListener('change', colorSchemeChangeHandler)
 
   return (
     // <Provider {...store}>

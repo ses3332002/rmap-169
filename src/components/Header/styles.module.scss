@@ -6,12 +6,12 @@
   justify-content: center;
   padding: 20px;
   background-color: $brandColor;
-  height: 40px;
-  :global {
-    .ant-menu-horizontal:hover {
-      line-height: inherit;
-    }
-  }
+  height: 54px;
+  // :global {
+  //   .ant-menu-horizontal:hover {
+  //     line-height: inherit;
+  //   }
+  // }
 }
 
 .header_row {
@@ -24,12 +24,12 @@
   :global {
     .ant-menu-submenu-title {
       color: white !important;
-      border: none !important;
+      // border: none !important;
       &:hover,
       &:visited,
       &:active {
         color: white !important;
-        border: none !important;
+        // border: none !important;
         text-decoration: none;
       }
     }

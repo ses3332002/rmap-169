@@ -45,9 +45,9 @@ function Header(): React.ReactElement {
               title={t('dashboard')}
               className={styles.submenu}
             >
-              <Item key="1">Option 1</Item>
-              <Item key="2">Option 2</Item>
-              <Item key="3">Option 3</Item>
+              <Item key="11">{t('option')}</Item>
+              <Item key="12">{t('option')}</Item>
+              <Item key="13">{t('option')}</Item>
             </SubMenu>
             <SubMenu
               key="sub2"
@@ -55,9 +55,9 @@ function Header(): React.ReactElement {
               title={t('elements')}
               className={styles.submenu}
             >
-              <Item key="21">Option 1</Item>
-              <Item key="22">Option 2</Item>
-              <Item key="23">Option 3</Item>
+              <Item key="21">{t('option')}</Item>
+              <Item key="22">{t('option')}</Item>
+              <Item key="23">{t('option')}</Item>
             </SubMenu>
             <SubMenu
               key="sub3"
@@ -65,9 +65,9 @@ function Header(): React.ReactElement {
               title={t('apps')}
               className={styles.submenu}
             >
-              <Menu.Item key="1">Option 1</Menu.Item>
-              <Menu.Item key="2">Option 2</Menu.Item>
-              <Menu.Item key="3">Option 3</Menu.Item>
+              <Menu.Item key="31">{t('option')}</Menu.Item>
+              <Menu.Item key="32">{t('option')}</Menu.Item>
+              <Menu.Item key="33">{t('option')}</Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub4"
@@ -75,9 +75,9 @@ function Header(): React.ReactElement {
               title={t('components')}
               className={styles.submenu}
             >
-              <Menu.Item key="1">Option 1</Menu.Item>
-              <Menu.Item key="2">Option 2</Menu.Item>
-              <Menu.Item key="3">Option 3</Menu.Item>
+              <Menu.Item key="41">{t('option')}</Menu.Item>
+              <Menu.Item key="42">{t('option')}</Menu.Item>
+              <Menu.Item key="43">{t('option')}</Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub5"
@@ -85,9 +85,9 @@ function Header(): React.ReactElement {
               title={t('extra_pages')}
               className={styles.submenu}
             >
-              <Menu.Item key="1">Option 1</Menu.Item>
-              <Menu.Item key="2">Option 2</Menu.Item>
-              <Menu.Item key="3">Option 3</Menu.Item>
+              <Menu.Item key="51">{t('option')}</Menu.Item>
+              <Menu.Item key="52">{t('option')}</Menu.Item>
+              <Menu.Item key="53">{t('option')}</Menu.Item>
             </SubMenu>
           </Menu>
         </Col>
