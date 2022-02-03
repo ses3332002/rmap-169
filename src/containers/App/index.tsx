@@ -6,7 +6,9 @@ import enUS from 'antd/lib/locale/en_US'
 import heIL from 'antd/lib/locale/he_IL'
 import moment from 'moment'
 import 'moment/locale/he'
+import Header from '../../components/Header'
 import { languageCodes } from '../../i18n/variables'
+import styles from './styles.module.scss'
 
 // import { Provider } from 'mobx-react'
 // import store from 'stores'
@@ -73,16 +75,18 @@ function App(): JSX.Element {
       themeMap={themes}
       insertionPoint={document.getElementById('inject-styles-here')}
     >
-      Hello
       <ConfigProvider direction={antdDirection} locale={antdLocale}>
-        <Row>
-          <Col span={24}>
-            <Button>{t('buttonText')}</Button>
-            {t('welcomeText')}
-            <Button>Hello onсe more</Button>
-          </Col>
-          <DatePicker />
-        </Row>
+        <div className={styles.app}>
+          <Header />
+          <Row>
+            <Col span={24}>
+              <Button>{t('buttonText')}</Button>
+              {t('welcomeText')}
+              <Button>Hello onсe more</Button>
+            </Col>
+            <DatePicker />
+          </Row>
+        </div>
       </ConfigProvider>
     </ThemeSwitcherProvider>
     // </Provider>

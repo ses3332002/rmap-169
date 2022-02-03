@@ -1,4 +1,9 @@
 {
   "welcomeText": "Welcome to React",
-  "buttonText": "Welcome"
+  "buttonText": "Welcome",
+  "dashboard": "Dashboard",
+  "elements": "UI Elements",
+  "apps": "Apps",
+  "components": "Components",
+  "extra_pages": "Extra pages"
 }

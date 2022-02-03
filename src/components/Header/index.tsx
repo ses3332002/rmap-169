@@ -1,55 +1,98 @@
 import React from 'react'
-import { Layout, Button, Avatar } from 'antd'
-import { LayoutOutlined, LoginOutlined, UserOutlined } from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+import { Row, Col, Layout, Menu, Button, Avatar } from 'antd'
+import {
+  HomeOutlined,
+  GlobalOutlined,
+  AppstoreAddOutlined,
+  ContainerOutlined,
+  FileTextOutlined,
+  CaretDownOutlined,
+} from '@ant-design/icons'
+import { useTranslation } from 'react-i18next'
+// import { Link } from 'react-router-dom'
 
-import * as usersActions from 'actions/users'
+// import * as usersActions from 'actions/users'
 
-import { useStore } from 'stores'
+// import { useStore } from 'stores'
 
 import styles from './styles.module.scss'
 
-export function Header(): React.ReactElement {
-  const { userStore } = useStore()
-  const { user } = userStore
+function Header(): React.ReactElement {
+  // const { userStore } = useStore()
+  // const { user } = userStore
+  const { t } = useTranslation()
+
+  const { SubMenu, Item } = Menu
 
   return (
-    <Layout.Header>
-      <div className={styles.header}>
-        <span>
-          <Link to="/">
-            <LayoutOutlined /> Application template
-          </Link>
-        </span>
-        {user && user.id ? (
-          <div className={styles.user}>
-            <Avatar icon={<UserOutlined />} className={styles.avatar} />
-            <span>{user.name}</span>
-            {user.id === 1 && (
-              <span>
-                &nbsp;
-                <Link to="/admin">
-                  <Button type="dashed" size="small">
-                    Admin panel
-                  </Button>
-                </Link>
-              </span>
-            )}
-            ,&nbsp;
-            <span className={styles.signOut} onClick={usersActions.unsetUser}>
-              sign out
-            </span>
-            .
-          </div>
-        ) : (
-          <Link to="/login">
-            <Button type="primary" icon={<LoginOutlined />}>
-              Sign In
-            </Button>
-          </Link>
-        )}
-      </div>
-    </Layout.Header>
+    <header className={styles.header}>
+      <Row className={styles.header_row}>
+        <Col span={24}>
+          <Menu
+            mode="horizontal"
+            style={{
+              zIndex: 5,
+              width: '100%',
+              border: 'none',
+              backgroundColor: 'transparent',
+              color: 'white',
+              fontWeight: 'bold',
+            }}
+          >
+            <SubMenu
+              key="sub1"
+              icon={<HomeOutlined />}
+              title={t('dashboard')}
+              className={styles.submenu}
+            >
+              <Item key="1">Option 1</Item>
+              <Item key="2">Option 2</Item>
+              <Item key="3">Option 3</Item>
+            </SubMenu>
+            <SubMenu
+              key="sub2"
+              icon={<GlobalOutlined />}
+              title={t('elements')}
+              className={styles.submenu}
+            >
+              <Item key="21">Option 1</Item>
+              <Item key="22">Option 2</Item>
+              <Item key="23">Option 3</Item>
+            </SubMenu>
+            <SubMenu
+              key="sub3"
+              icon={<AppstoreAddOutlined />}
+              title={t('apps')}
+              className={styles.submenu}
+            >
+              <Menu.Item key="1">Option 1</Menu.Item>
+              <Menu.Item key="2">Option 2</Menu.Item>
+              <Menu.Item key="3">Option 3</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub4"
+              icon={<ContainerOutlined />}
+              title={t('components')}
+              className={styles.submenu}
+            >
+              <Menu.Item key="1">Option 1</Menu.Item>
+              <Menu.Item key="2">Option 2</Menu.Item>
+              <Menu.Item key="3">Option 3</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub5"
+              icon={<FileTextOutlined />}
+              title={t('extra_pages')}
+              className={styles.submenu}
+            >
+              <Menu.Item key="1">Option 1</Menu.Item>
+              <Menu.Item key="2">Option 2</Menu.Item>
+              <Menu.Item key="3">Option 3</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Col>
+      </Row>
+    </header>
   )
 }
 

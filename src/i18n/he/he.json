@@ -1,4 +1,9 @@
 {
   "welcomeText": "ברוכים הבאים לריאקט!",
-  "buttonText": "לחץ עלי"
+  "buttonText": "לחץ עלי",
+  "dashboard": "לוּחַ מַחווָנִים",
+  "elements": "רכיבי ממשק",
+  "apps": "יישומים",
+  "components": "רכיבים",
+  "extra_pages": "עמודים נוספים"
 }
