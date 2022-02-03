@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, ConfigProvider, Col, Row, DatePicker } from 'antd'
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher'
 import { useTranslation } from 'react-i18next'
@@ -6,17 +6,38 @@ import enUS from 'antd/lib/locale/en_US'
 import heIL from 'antd/lib/locale/he_IL'
 import moment from 'moment'
 import 'moment/locale/he'
+import { languageCodes } from '../../i18n/variables'
 
 // import { Provider } from 'mobx-react'
 // import store from 'stores'
 
 function App(): JSX.Element {
   const { t, i18n } = useTranslation()
+  let antdLocale
+  let antdDirection
 
-  let direction = i18n.dir()
-  console.log(i18n.resolvedLanguage)
+  function setLanguage(resolvedLanguage: string, direction: string) {
+    antdDirection = direction
+    moment.locale(resolvedLanguage)
 
-  moment.locale('he')
+    switch (resolvedLanguage) {
+      case languageCodes.enCode:
+        antdLocale = enUS
+        break
+      case languageCodes.heCode:
+        antdLocale = heIL
+        break
+      default:
+        antdLocale = enUS
+        moment.locale('en')
+    }
+  }
+
+  setLanguage(i18n.resolvedLanguage, i18n.dir())
+
+  useEffect(() => {
+    console.log("I've started")
+  }, [])
 
   const themes = {
     light: `${process.env.PUBLIC_URL}/styles/antd.min.css`,
@@ -53,11 +74,11 @@ function App(): JSX.Element {
       insertionPoint={document.getElementById('inject-styles-here')}
     >
       Hello
-      <ConfigProvider direction={direction} locale={heIL}>
+      <ConfigProvider direction={antdDirection} locale={antdLocale}>
         <Row>
           <Col span={24}>
             <Button>{t('buttonText')}</Button>
-            {t('welcome')}
+            {t('welcomeText')}
             <Button>Hello onсe more</Button>
           </Col>
           <DatePicker />
