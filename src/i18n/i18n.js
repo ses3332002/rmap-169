@@ -41,11 +41,11 @@ const options = {
 
 i18n
   .use(initReactI18next)
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
   .init({
     resources,
-    detection: options,
-    fallbackLng: 'en',
+    // detection: options,
+    // fallbackLng: 'en',
     keySeparator: false,
     interpolation: {
       escapeValue: false,

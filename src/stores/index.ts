@@ -3,12 +3,14 @@ import { configure, observable } from 'mobx'
 
 import userStore from './User'
 import usersStore from './Users'
+import localeStore from './Locale'
 
 configure({ enforceActions: 'observed' })
 
 class RootStore {
   @observable usersStore = usersStore
   @observable userStore = userStore
+  @observable localeStore = localeStore
 }
 
 const rootStore = new RootStore()
@@ -23,4 +25,4 @@ export const useStore = (): RootStore => {
   return store
 }
 
-export default new RootStore()
+export default rootStore

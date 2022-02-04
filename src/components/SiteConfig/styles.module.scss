@@ -1,0 +1,14 @@
+@import '../../sources/styles/variables';
+
+:global {
+  .ant-dropdown-link {
+    color: inherit;
+    font-weight: bold;
+  }
+}
+
+.dropdown_menu {
+  @media screen and (max-width: $tablet_width) {
+    display: none;
+  }
+}

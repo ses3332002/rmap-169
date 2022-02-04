@@ -6,5 +6,7 @@
   "apps": "Apps",
   "components": "Components",
   "extra_pages": "Extra pages",
-  "option": "Option"
+  "option": "Option",
+  "search": "Search...",
+  "mega_menu": "Mega Menu"
 }
