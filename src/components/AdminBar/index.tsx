@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row } from 'antd'
-import styles from './styles.module.scss'
 import SiteConfig from 'components/SiteConfig'
 import UserConfig from 'components/UserConfig'
+import styles from './styles.module.scss'
 
 function AdminBar(): React.ReactElement {
   return (

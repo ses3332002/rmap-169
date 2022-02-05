@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Menu, Input, Space, Dropdown } from 'antd'
+import { Row, Col, Menu, Input, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import styles from './styles.module.scss'
@@ -16,22 +16,29 @@ function SiteConfig(): React.ReactElement {
   )
 
   return (
-    <Row align="middle">
-      <Space size={20}>
-        <Col className={styles.logo}>
-          <img src={logoImg} alt="Logo" />
-        </Col>
-        <Col>
-          <Input placeholder={t('search')} style={{ borderRadius: 20 }} />
-        </Col>
-        <Col className={styles.dropdown_menu}>
-          <Dropdown overlay={menu} trigger={['click']}>
-            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-              {t('mega_menu')} <DownOutlined />
-            </a>
-          </Dropdown>
-        </Col>
-      </Space>
+    <Row
+      align="middle"
+      justify="space-between"
+      gutter={10}
+      className={styles.site_row}
+    >
+      <Col className={styles.logo}>
+        <img src={logoImg} alt="Logo" />
+      </Col>
+      <Col>
+        <Input
+          placeholder={t('search')}
+          style={{ borderRadius: 20 }}
+          size="small"
+        />
+      </Col>
+      <Col className={styles.dropdown_menu}>
+        <Dropdown overlay={menu} trigger={['click']}>
+          <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+            {t('mega_menu')} <DownOutlined />
+          </a>
+        </Dropdown>
+      </Col>
     </Row>
   )
 }

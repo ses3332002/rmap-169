@@ -3,7 +3,8 @@ import { Button, ConfigProvider, DatePicker } from 'antd'
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher'
 import { useTranslation } from 'react-i18next'
 import 'moment/locale/he'
-import Header from '../../components/Header'
+import Header from 'components/Header'
+import Main from 'components/Main'
 import styles from './styles.module.scss'
 import { useStore } from 'stores'
 
@@ -67,6 +68,7 @@ const App = observer(() => {
         >
           <div className={styles.app}>
             <Header />
+            <Main />
             <Button>{t('buttonText')}</Button>
             <DatePicker />
           </div>

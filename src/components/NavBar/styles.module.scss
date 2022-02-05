@@ -26,6 +26,18 @@
   }
 }
 
+.menu {
+  @media screen and (max-width: $tablet_width) {
+    text-align: center !important;
+    margin: 0 !important;
+    :global {
+      .ant-icon {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 .submenu {
   :global {
     .ant-menu-submenu-title {

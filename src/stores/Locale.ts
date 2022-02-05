@@ -11,10 +11,10 @@ class LocaleStore {
   }
 
   @observable locale: ILocale = {
-    name: 'en',
+    name: undefined,
   }
 
-  @action setLocale = (name: 'en' | 'he'): void => {
+  @action setLocale = (name: ILocale['name']): void => {
     this.locale.name = name
   }
 
@@ -43,7 +43,23 @@ class LocaleStore {
 
 const localeStore = new LocaleStore()
 
+function checkLocalStorage(locale: 'en' | 'he' | undefined) {
+  if (localStorage.getItem('locale')) {
+    if (locale === undefined) {
+      localeStore.setLocale(localStorage.getItem('locale') as 'en' | 'he')
+      return
+    }
+    if (localStorage.getItem('locale') !== locale) {
+      localStorage.setItem('locale', locale as string)
+    }
+  } else if (!localStorage.getItem('locale')) {
+    localeStore.setLocale('en')
+    localStorage.setItem('locale', 'en')
+  }
+}
+
 autorun(() => {
+  checkLocalStorage(localeStore.locale.name)
   moment.locale(localeStore.locale.name)
   i18n.changeLanguage(localeStore.locale.name)
 })

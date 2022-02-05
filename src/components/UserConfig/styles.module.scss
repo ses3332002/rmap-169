@@ -1,0 +1,19 @@
+@import '../../sources/styles/variables';
+.buttons_row {
+  width: 360px;
+  :global {
+    .ant-btn {
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+    }
+  }
+  @media screen and (max-width: $mobile_width) {
+    width: auto;
+  }
+}
+
+.menu_button {
+  @media screen and (max-width: $mobile_width) {
+    display: none !important;
+  }
+}

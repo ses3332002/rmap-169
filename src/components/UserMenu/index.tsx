@@ -18,7 +18,7 @@ function UserMenu(): React.ReactElement {
 
   return (
     <Col>
-      <Space size={8}>
+      <Space size={6}>
         {user.imgSrc ? (
           <Avatar src={user.imgSrc} />
         ) : (

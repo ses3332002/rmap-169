@@ -1,0 +1,10 @@
+@import '../../sources/styles/variables';
+
+.breadcrumbs_row {
+  width: 100%;
+  max-width: $desktop_width;
+
+  @media screen and (max-width: $mobile_width) {
+    display: none !important;
+  }
+}

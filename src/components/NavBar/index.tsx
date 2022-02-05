@@ -19,6 +19,7 @@ function NavBar(): React.ReactElement {
       <Row className={styles.navbar_row}>
         <Col span={24}>
           <Menu
+            className={styles.menu}
             mode="horizontal"
             style={{
               zIndex: 5,

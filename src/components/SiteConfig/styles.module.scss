@@ -7,8 +7,20 @@
   }
 }
 
+.site_row {
+  @media screen and (max-width: $mobile_width) {
+    width: 190px;
+  }
+}
+
 .dropdown_menu {
   @media screen and (max-width: $tablet_width) {
+    display: none;
+  }
+}
+
+.logo {
+  @media screen and (max-width: $mobile_width) {
     display: none;
   }
 }

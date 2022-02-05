@@ -1,3 +1,3 @@
 export interface ILocale {
-  name: 'en' | 'he'
+  name: 'en' | 'he' | undefined
 }

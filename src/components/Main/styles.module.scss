@@ -1,0 +1,13 @@
+@import '../../sources/styles/variables';
+
+.container {
+  padding: $desktop_padding;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $mobile_width) {
+    padding: $mobile_padding;
+  }
+}
