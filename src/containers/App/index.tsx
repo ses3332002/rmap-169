@@ -6,30 +6,12 @@ import 'moment/locale/he'
 import Header from 'components/Header'
 import Main from 'components/Main'
 import styles from './styles.module.scss'
-import { useStore } from 'stores'
 
-import { Provider, observer } from 'mobx-react'
+import { Provider } from 'mobx-react'
 import store from 'stores'
 
-const App = observer(() => {
-  const { t, i18n } = useTranslation()
-
-  const { localeStore } = useStore()
-  const { locale } = localeStore
-
-  // function getLocale() {
-  //   if (localStorage.getItem('locale')) {
-  //     prepareLocale(localStorage.getItem('locale') as string)
-  //     return localStorage.getItem('locale')
-  //   } else {
-  //     prepareLocale(i18n.resolvedLanguage)
-  //     return i18n.resolvedLanguage
-  //   }
-  // }
-
-  // function saveLocale(locale: string) {
-  //   localStorage.setItem('locale', locale)
-  // }
+const App = () => {
+  const { t } = useTranslation()
 
   const themes = {
     light: `${process.env.PUBLIC_URL}/styles/antd.min.css`,
@@ -63,8 +45,8 @@ const App = observer(() => {
         insertionPoint={document.getElementById('inject-styles-here')}
       >
         <ConfigProvider
-          direction={localeStore.antdDirection}
-          locale={localeStore.antdLocale}
+          direction={store.localeStore.antdDirection}
+          locale={store.localeStore.antdLocale}
         >
           <div className={styles.app}>
             <Header />
@@ -76,6 +58,6 @@ const App = observer(() => {
       </ThemeSwitcherProvider>
     </Provider>
   )
-})
+}
 
 export default App

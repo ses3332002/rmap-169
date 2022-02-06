@@ -1,5 +1,5 @@
 import { observable, action, computed, autorun, makeAutoObservable } from 'mobx'
-import { ILocale } from '../models'
+import { ILocale, TLocaleName } from '../models'
 import enUS from 'antd/lib/locale/en_US'
 import heIL from 'antd/lib/locale/he_IL'
 import moment from 'moment'
@@ -43,18 +43,18 @@ class LocaleStore {
 
 const localeStore = new LocaleStore()
 
-function checkLocalStorage(locale: 'en' | 'he' | undefined) {
+function checkLocalStorage(locale: TLocaleName) {
   if (localStorage.getItem('locale')) {
     if (locale === undefined) {
-      localeStore.setLocale(localStorage.getItem('locale') as 'en' | 'he')
+      localeStore.setLocale(localStorage.getItem('locale') as TLocaleName)
       return
     }
     if (localStorage.getItem('locale') !== locale) {
       localStorage.setItem('locale', locale as string)
     }
   } else if (!localStorage.getItem('locale')) {
-    localeStore.setLocale('en')
-    localStorage.setItem('locale', 'en')
+    localeStore.setLocale(i18n.resolvedLanguage as TLocaleName)
+    localStorage.setItem('locale', i18n.resolvedLanguage)
   }
 }
 

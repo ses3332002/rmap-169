@@ -16,7 +16,6 @@ function BreadcrumbsHeader(): React.ReactElement {
           <Breadcrumb.Item>
             <a href="#">{t('dashboards')}</a>
           </Breadcrumb.Item>
-
           <Breadcrumb.Item>{t('dashboard')}</Breadcrumb.Item>
         </Breadcrumb>
       </Col>

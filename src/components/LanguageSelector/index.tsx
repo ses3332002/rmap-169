@@ -1,6 +1,7 @@
 import React from 'react'
 import { Select } from 'antd'
 import { useStore } from 'stores'
+import { useTranslation } from 'react-i18next'
 
 import enIcon from '../../sources/images/en_icon.png'
 import heIcon from '../../sources/images/he_icon.png'
@@ -8,6 +9,8 @@ import heIcon from '../../sources/images/he_icon.png'
 function LanguageSelector(): React.ReactElement {
   const { localeStore } = useStore()
   const { locale } = localeStore
+
+  const { t } = useTranslation()
 
   function languageSelectHandler(value: any) {
     localeStore.setLocale(value)
@@ -22,10 +25,10 @@ function LanguageSelector(): React.ReactElement {
       onChange={value => languageSelectHandler(value)}
     >
       <Option value="en">
-        <img src={enIcon} />
+        <img src={enIcon} alt={t('english_selector')} />
       </Option>
       <Option value="he">
-        <img src={heIcon} />
+        <img src={heIcon} alt={t('hebrew_selector')} />
       </Option>
     </Select>
   )
