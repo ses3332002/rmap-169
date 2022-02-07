@@ -50,7 +50,7 @@ const App = () => {
         >
           <div className={styles.app}>
             <Header />
-            {/* <Main /> */}
+            <Main />
           </div>
         </ConfigProvider>
       </ThemeSwitcherProvider>

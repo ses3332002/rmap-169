@@ -2,13 +2,11 @@ import { createContext, useContext } from 'react'
 import { configure, observable } from 'mobx'
 
 import userStore from './User'
-import usersStore from './Users'
 import localeStore from './Locale'
 
 configure({ enforceActions: 'observed' })
 
 class RootStore {
-  @observable usersStore = usersStore
   @observable userStore = userStore
   @observable localeStore = localeStore
 }

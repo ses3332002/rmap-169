@@ -46,7 +46,7 @@ function ChartsVidget(): React.ReactElement {
           </Button>
         </Col>
       </Row>
-      {/* <Column className={styles.chart} autoFit {...config} /> */}
+      <Column className={styles.chart} autoFit {...config} />
     </Card>
   )
 }
