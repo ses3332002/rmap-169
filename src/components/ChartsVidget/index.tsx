@@ -3,7 +3,7 @@ import { Card, Typography, Row, Col, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useStore } from 'stores'
 
-// import { Column } from '@ant-design/plots'
+import { Column } from '@ant-design/plots'
 import styles from './styles.module.scss'
 
 function ChartsVidget(): React.ReactElement {
@@ -46,7 +46,7 @@ function ChartsVidget(): React.ReactElement {
           </Button>
         </Col>
       </Row>
-      {/* <Column className={styles.chart} autoFit {...config} /> */}
+      <Column className={styles.chart} autoFit {...config} />
     </Card>
   )
 }
