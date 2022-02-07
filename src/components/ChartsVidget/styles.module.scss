@@ -1,0 +1,12 @@
+.chart {
+  width: 99%;
+}
+
+.button {
+  margin: 20px 0;
+  :global {
+    .ant-typography {
+      color: white !important;
+    }
+  }
+}

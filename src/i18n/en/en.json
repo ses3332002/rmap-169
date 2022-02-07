@@ -10,5 +10,21 @@
   "dashboard": "Dashboard",
   "dashboards": "Dashboards",
   "english_selector": "English selector",
-  "hebrew_selector": "Hebrew selector"
+  "hebrew_selector": "Hebrew selector",
+  "orders": "Orders",
+  "revenue": "Revenue",
+  "average_price": "Average price",
+  "welcome_back": "Welcome Back!",
+  "scote_dashboard": "Scote Dashboard",
+  "projects": "Projects",
+  "view_profile": "View Profile",
+  "monthly_earnings": "Monthly earnings",
+  "this_month": "This month",
+  "from_prev": "From previous period",
+  "view_more": "View More",
+  "we_craft": "We craft digital, graphic and dimensional thinking.",
+  "email_sent": "Email Sent",
+  "week": "Week",
+  "month": "Month",
+  "year": "Year"
 }

@@ -2,9 +2,9 @@
 
 .breadcrumbs_row {
   width: 100%;
-  max-width: $desktop_width;
+  max-width: $desktopWidth;
 
-  @media screen and (max-width: $mobile_width) {
+  @media screen and (max-width: $mobileWidth) {
     display: none !important;
   }
 }

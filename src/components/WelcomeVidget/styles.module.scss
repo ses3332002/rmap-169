@@ -1,0 +1,73 @@
+@import '../../sources/styles/variables';
+
+.container {
+  :global {
+    .ant-card-body {
+      padding: 0 !important;
+    }
+  }
+
+  text-align: left;
+  overflow: hidden;
+  min-width: 600px;
+}
+
+.card_top {
+  width: 100%;
+  height: 130px;
+  background-image: url('https://picsum.photos/seed/picsum/500/120');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 24px;
+  :global {
+    .ant-typography {
+      color: $brandColor !important;
+    }
+  }
+}
+
+.card_info {
+  padding: 24px;
+  height: 120px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  div:nth-child(1) {
+    align-self: flex-end;
+    flex-shrink: 0;
+  }
+}
+
+.info_panel {
+  height: 80px;
+  padding: 10px 0;
+  min-width: 100px;
+}
+
+.user_avatar {
+  position: relative;
+}
+
+.avatar {
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  z-index: 5;
+  width: 64px;
+  height: 64px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  :global {
+    .ant-typography {
+      color: white !important;
+    }
+  }
+}

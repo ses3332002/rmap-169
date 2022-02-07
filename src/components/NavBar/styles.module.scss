@@ -4,19 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $desktop_padding;
+  padding: $desktopPadding;
   box-sizing: border-box;
   background-color: $brandColor;
   height: 54px;
 
-  @media screen and (max-width: $mobile_width) {
-    padding: $mobile_padding;
+  @media screen and (max-width: $mobileWidth) {
+    padding: $mobilePadding;
   }
 }
 
 .navbar_row {
   width: 100%;
-  max-width: $desktop_width;
+  max-width: $desktopWidth;
   z-index: 5;
   :global {
     .ant-menu {
@@ -27,7 +27,7 @@
 }
 
 .menu {
-  @media screen and (max-width: $tablet_width) {
+  @media screen and (max-width: $tabletWidth) {
     text-align: center !important;
     margin: 0 !important;
     :global {
@@ -52,7 +52,7 @@
   }
 }
 
-@media screen and (max-width: $tablet_width) {
+@media screen and (max-width: $tabletWidth) {
   .submenu span:nth-child(2) {
     display: none;
   }

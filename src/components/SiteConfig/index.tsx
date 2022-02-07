@@ -26,11 +26,7 @@ function SiteConfig(): React.ReactElement {
         <img src={logoImg} alt="Logo" />
       </Col>
       <Col>
-        <Input
-          placeholder={t('search')}
-          style={{ borderRadius: 20 }}
-          size="small"
-        />
+        <Input placeholder={t('search')} style={{ borderRadius: 20 }} />
       </Col>
       <Col className={styles.dropdown_menu}>
         <Dropdown overlay={menu} trigger={['click']}>
