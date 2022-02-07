@@ -1,0 +1,27 @@
+@import '../../sources/styles/variables';
+
+.container {
+  text-align: left;
+  min-width: 600px;
+}
+
+.text {
+  margin: 0 12px;
+}
+
+.button {
+  margin: 20px 0;
+  :global {
+    .ant-typography {
+      color: white !important;
+    }
+  }
+}
+
+.positive {
+  color: green !important;
+}
+
+.negative {
+  color: red !important;
+}

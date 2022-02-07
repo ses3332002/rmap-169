@@ -12,8 +12,9 @@ function LanguageSelector(): React.ReactElement {
 
   const { t } = useTranslation()
 
-  function languageSelectHandler(value: any) {
+  function languageSelectHandler(value: 'en' | 'he') {
     localeStore.setLocale(value)
+    console.log(123)
   }
   const { Option } = Select
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, ConfigProvider, DatePicker } from 'antd'
+import { ConfigProvider } from 'antd'
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher'
 import { useTranslation } from 'react-i18next'
 import 'moment/locale/he'
@@ -50,9 +50,7 @@ const App = () => {
         >
           <div className={styles.app}>
             <Header />
-            <Main />
-            <Button>{t('buttonText')}</Button>
-            <DatePicker />
+            {/* <Main /> */}
           </div>
         </ConfigProvider>
       </ThemeSwitcherProvider>

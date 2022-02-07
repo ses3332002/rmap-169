@@ -8,19 +8,19 @@
 }
 
 .site_row {
-  @media screen and (max-width: $mobile_width) {
+  @media screen and (max-width: $mobileWidth) {
     width: 190px;
   }
 }
 
 .dropdown_menu {
-  @media screen and (max-width: $tablet_width) {
+  @media screen and (max-width: $tabletWidth) {
     display: none;
   }
 }
 
 .logo {
-  @media screen and (max-width: $mobile_width) {
+  @media screen and (max-width: $mobileWidth) {
     display: none;
   }
 }

@@ -6,15 +6,15 @@
   align-items: center;
   justify-content: center;
   height: 54px;
-  padding: $desktop_padding;
+  padding: $desktopPadding;
 
-  @media screen and (max-width: $mobile_width) {
-    padding: $mobile_padding;
+  @media screen and (max-width: $mobileWidth) {
+    padding: $mobilePadding;
   }
 }
 
 .adminbar_row {
   width: 100%;
-  max-width: $desktop_width;
+  max-width: $desktopWidth;
   z-index: 5;
 }

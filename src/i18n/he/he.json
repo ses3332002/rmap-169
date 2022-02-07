@@ -1,6 +1,4 @@
 {
-  "welcomeText": "ברוכים הבאים לריאקט!",
-  "buttonText": "לחץ עלי",
   "dashboard": "לוּחַ מַחווָנִים",
   "elements": "רכיבי ממשק",
   "apps": "יישומים",
@@ -12,5 +10,21 @@
   "dashboard": "לוּחַ מַחווָנִים",
   "dashboards": "לוחות מחוונים",
   "english_selector": "בורר אנגלית",
-  "hebrew_selector": "בורר עברית"
+  "hebrew_selector": "בורר עברית",
+  "orders": "הזמנות",
+  "revenue": "הַכנָסָה",
+  "average_price": "מחיר ממוצע",
+  "welcome_back": "ברוך שובך!",
+  "scote_dashboard": "Scote לוּחַ מַחווָנִים",
+  "projects": "פרויקטים",
+  "view_profile": "צפה בפרופיל",
+  "monthly_earnings": "רווחים חודשיים",
+  "this_month": "החודש",
+  "from_prev": "מהתקופה הקודמת",
+  "view_more": "ראה עוד",
+  "we_craft": "אנו יוצרים חשיבה דיגיטלית, גרפית וממדית.",
+  "email_sent": "הדוא\"ל נשלח",
+  "week": "שָׁבוּעַ",
+  "month": "חוֹדֶשׁ",
+  "year": "שָׁנָה"
 }
