@@ -9,7 +9,6 @@
 
   text-align: left;
   overflow: hidden;
-  min-width: 600px;
 }
 
 .card_top {
@@ -29,7 +28,6 @@
 
 .card_info {
   padding: 24px;
-  height: 120px;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -48,6 +46,7 @@
 
 .user_avatar {
   position: relative;
+  padding: 0 6px;
 }
 
 .avatar {

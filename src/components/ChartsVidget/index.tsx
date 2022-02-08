@@ -41,6 +41,7 @@ function ChartsVidget(): React.ReactElement {
         color={['blue', 'orange', 'green']}
         className={styles.chart}
         autoFit
+        height={320}
         maxColumnWidth={16}
         legend={{
           layout: 'horizontal',

@@ -2,12 +2,12 @@
 
 .container {
   display: flex;
+  height: 54px;
   align-items: center;
   justify-content: center;
   padding: $desktopPadding;
   box-sizing: border-box;
   background-color: $brandColor;
-  height: 54px;
 
   @media screen and (max-width: $mobileWidth) {
     padding: $mobilePadding;
