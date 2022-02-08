@@ -26,7 +26,7 @@ function UserMenu(): React.ReactElement {
         )}
         <Dropdown overlay={menu} trigger={['click']}>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-            {user.name} <DownOutlined />
+            {user.role} <DownOutlined />
           </a>
         </Dropdown>
       </Space>

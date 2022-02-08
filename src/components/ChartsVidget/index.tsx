@@ -17,15 +17,6 @@ function ChartsVidget(): React.ReactElement {
     xField: 'month',
     yField: 'value',
     seriesField: 'type',
-    label: {
-      // position: 'bottom',
-      // 'top', 'bottom', 'middle'
-      // layout: [
-      //   {
-      //     type: 'interval-adjust-position',
-      //   },
-      // ],
-    },
   }
 
   return (
@@ -46,7 +37,17 @@ function ChartsVidget(): React.ReactElement {
           </Button>
         </Col>
       </Row>
-      <Column className={styles.chart} autoFit {...config} />
+      <Column
+        color={['blue', 'orange', 'green']}
+        className={styles.chart}
+        autoFit
+        maxColumnWidth={16}
+        legend={{
+          layout: 'horizontal',
+          position: 'bottom',
+        }}
+        {...config}
+      />
     </Card>
   )
 }
